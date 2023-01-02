@@ -19,9 +19,8 @@ import java.util.List;
  * @author admin
  */
 public class MahasiswaController implements MahasiswaInterface {
-    
     PreparedStatement st;
-    
+
     @Override
     public Mahasiswa insert(Mahasiswa o) throws SQLException {
         st = ConnectionHelper.getConnection().prepareStatement("insert into mahasiswa values (?,?,?)");
@@ -35,9 +34,9 @@ public class MahasiswaController implements MahasiswaInterface {
     @Override
     public void update(Mahasiswa o) throws SQLException {
         st = ConnectionHelper.getConnection().prepareStatement("update mahasiswa set nama=?, alamat=?, where nim=?");
-        st.setString(1, o.getNama());
-        st.setString(2, o.getAlamat());
-        st.setString(3, o.getNim());
+        st.setString(1,o.getNim());
+        st.setString(2,o.getNama());
+        st.setString(3,o.getAlamat());
         st.executeUpdate();
     }
 
@@ -62,5 +61,10 @@ public class MahasiswaController implements MahasiswaInterface {
             list.add(mhs);
         }
         return list;
+    }   
+
+    private PreparedStatement setString(int i, String nim) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+    
 }

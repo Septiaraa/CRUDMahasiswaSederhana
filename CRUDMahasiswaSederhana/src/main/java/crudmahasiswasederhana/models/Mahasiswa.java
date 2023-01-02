@@ -4,11 +4,15 @@
  */
 package crudmahasiswasederhana.models;
 
+import crudmahasiswasederhana.interfc.MahasiswaInterface;
+import java.sql.SQLException;
+import java.util.List;
+
 /**
  *
  * @author admin
  */
-public class Mahasiswa {
+public class Mahasiswa implements MahasiswaInterface {
     private String nim;
     private String nama;
     private String alamat;
@@ -45,4 +49,26 @@ public class Mahasiswa {
     public void setAlamat(String alamat) {
         this.alamat = alamat;
     }
+
+    @Override
+    public Mahasiswa insert(Mahasiswa o) throws SQLException {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void update(Mahasiswa o) throws SQLException {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void delete(String nim) throws SQLException {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public List<Mahasiswa> getAll() throws SQLException {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    
+    
 }
